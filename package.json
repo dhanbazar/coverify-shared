@@ -1,0 +1,25 @@
+{
+  "name": "@coanfiss/coverify-shared",
+  "version": "1.0.0",
+  "description": "Shared types, schemas, and constants for CoVerify field verification platform",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["coverify", "verification", "shared"],
+  "author": "COANFISS",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}
