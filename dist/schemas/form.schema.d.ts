@@ -179,7 +179,7 @@ export declare const referenceCheckSchema: z.ZodObject<{
     }>>>;
     neighbour2Feedback: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     visitingCardObtained: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
-    prominentLandmark: z.ZodString;
+    prominentLandmark: z.ZodDefault<z.ZodOptional<z.ZodString>>;
 }, z.core.$strip>;
 export declare const interviewerCommentsSchema: z.ZodObject<{
     strengths: z.ZodArray<z.ZodString>;
@@ -347,7 +347,7 @@ export declare const caseFormDataSchema: z.ZodObject<{
         }>>>;
         neighbour2Feedback: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         visitingCardObtained: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
-        prominentLandmark: z.ZodString;
+        prominentLandmark: z.ZodDefault<z.ZodOptional<z.ZodString>>;
     }, z.core.$strip>;
     interviewerComments: z.ZodObject<{
         strengths: z.ZodArray<z.ZodString>;

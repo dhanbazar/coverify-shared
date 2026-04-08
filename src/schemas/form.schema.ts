@@ -183,7 +183,7 @@ export const referenceCheckSchema = z.object({
   neighbour2Status: z.enum(["Positive", "Negative"]).nullable().optional(),
   neighbour2Feedback: z.string().nullable().optional(),
   visitingCardObtained: z.boolean().nullable().optional(),
-  prominentLandmark: z.string().min(1, "Landmark is required"),
+  prominentLandmark: z.string().optional().default(""),
 });
 
 // ── S9: Interviewer Comments ──

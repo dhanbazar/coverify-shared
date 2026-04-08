@@ -15,6 +15,7 @@ export const CaseStatus = {
     APPROVED: "approved",
     REJECTED: "rejected",
     REOPENED: "reopened",
+    REPORT_GENERATED: "report_generated",
 };
 // ── Loan Type ──
 export const LoanType = {

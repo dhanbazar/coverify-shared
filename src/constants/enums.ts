@@ -17,6 +17,7 @@ export const CaseStatus = {
   APPROVED: "approved",
   REJECTED: "rejected",
   REOPENED: "reopened",
+  REPORT_GENERATED: "report_generated",
 } as const;
 export type CaseStatus = (typeof CaseStatus)[keyof typeof CaseStatus];
 

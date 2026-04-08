@@ -47,6 +47,7 @@ export interface CaseListItem {
   applicantName: string;
   locationCity: string;
   assignedAt: string;
+  pdfUrl?: string | null;
 }
 
 export interface CaseAssignment {

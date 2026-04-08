@@ -14,6 +14,7 @@ export declare const CaseStatus: {
     readonly APPROVED: "approved";
     readonly REJECTED: "rejected";
     readonly REOPENED: "reopened";
+    readonly REPORT_GENERATED: "report_generated";
 };
 export type CaseStatus = (typeof CaseStatus)[keyof typeof CaseStatus];
 export declare const LoanType: {
