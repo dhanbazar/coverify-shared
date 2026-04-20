@@ -18,8 +18,8 @@ export interface Case {
   reportType: ReportType;
   reportStatus: ReportStatus | null;
   status: CaseStatus;
-  assignedAgentId: string;
-  assignedAt: string;
+  assignedAgentId: string | null;  // null when status === 'unassigned'
+  assignedAt: string | null;       // null when status === 'unassigned'
   deadline: string;
   tatStatus: TatStatus;
   syncStatus: SyncStatus;
@@ -46,7 +46,7 @@ export interface CaseListItem {
   deadline: string;
   applicantName: string;
   locationCity: string;
-  assignedAt: string;
+  assignedAt: string | null;
   pdfUrl?: string | null;
 }
 
@@ -54,4 +54,53 @@ export interface CaseAssignment {
   caseIds: string[];
   agentId: string;
   deadline: string;
+}
+
+// ── Create Case ─────────────────────────────────────────────────────────────
+
+export interface CreateCasePayload {
+  clientName: string;
+  applicantName?: string;
+  loanType: string;
+  loanReferenceNo: string;
+  verificationType: string;
+  reportType: string;
+  locationCity: string;
+  locationAddress?: string;
+  assignedAgentId?: string;  // omit to auto-assign
+  deadline?: string;
+  product?: string;
+  clientBranch?: string;
+}
+
+export interface CreateCaseResponse {
+  id: string;
+  caseId: string;
+  assignedAgentId: string | null;
+  assignedTo: { id: string; fullName: string } | null;
+  status: CaseStatus;
+  assignmentReason: string | null;
+}
+
+// ── Bulk Import ─────────────────────────────────────────────────────────────
+
+export interface BulkImportRow {
+  client_name: string;
+  applicant_name?: string;
+  loan_type: string;
+  loan_reference_no: string;
+  verification_type: string;
+  report_type: string;
+  location_city: string;
+  deadline?: string;
+  product?: string;
+  client_branch?: string;
+}
+
+export interface BulkImportResult {
+  imported: number;
+  failed: number;
+  autoAssigned: number;
+  unassigned: number;
+  errors: Array<{ row: number; message: string }>;
 }
