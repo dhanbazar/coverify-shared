@@ -7,6 +7,7 @@ export const UserRole = {
 };
 // ── Case Status ──
 export const CaseStatus = {
+    UNASSIGNED: "unassigned",
     ASSIGNED: "assigned",
     IN_PROGRESS: "in_progress",
     PENDING_SYNC: "pending_sync",

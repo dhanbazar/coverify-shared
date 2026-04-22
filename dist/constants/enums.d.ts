@@ -6,6 +6,7 @@ export declare const UserRole: {
 };
 export type UserRole = (typeof UserRole)[keyof typeof UserRole];
 export declare const CaseStatus: {
+    readonly UNASSIGNED: "unassigned";
     readonly ASSIGNED: "assigned";
     readonly IN_PROGRESS: "in_progress";
     readonly PENDING_SYNC: "pending_sync";
