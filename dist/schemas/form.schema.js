@@ -176,6 +176,11 @@ export const interviewerCommentsSchema = z.object({
     recommendationText: z.string().min(1, "Recommendation text is required"),
     commentsSummary: z.string().nullable().optional(),
 });
+// ── S10: Custom Q&A ──
+export const customQuestionSchema = z.object({
+    question: z.string().min(1),
+    answer: z.string().min(1),
+});
 // ── Complete Form ──
 export const caseFormDataSchema = z.object({
     visitDetails: visitDetailsSchema,
@@ -186,5 +191,6 @@ export const caseFormDataSchema = z.object({
     obligations: obligationsSchema.nullable().optional(),
     referenceCheck: referenceCheckSchema,
     interviewerComments: interviewerCommentsSchema,
+    customQuestions: z.array(customQuestionSchema).default([]),
 });
 //# sourceMappingURL=form.schema.js.map

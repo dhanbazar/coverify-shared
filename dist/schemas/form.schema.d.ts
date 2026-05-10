@@ -192,6 +192,10 @@ export declare const interviewerCommentsSchema: z.ZodObject<{
     recommendationText: z.ZodString;
     commentsSummary: z.ZodOptional<z.ZodNullable<z.ZodString>>;
 }, z.core.$strip>;
+export declare const customQuestionSchema: z.ZodObject<{
+    question: z.ZodString;
+    answer: z.ZodString;
+}, z.core.$strip>;
 export declare const caseFormDataSchema: z.ZodObject<{
     visitDetails: z.ZodObject<{
         applicantName: z.ZodString;
@@ -360,6 +364,10 @@ export declare const caseFormDataSchema: z.ZodObject<{
         recommendationText: z.ZodString;
         commentsSummary: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     }, z.core.$strip>;
+    customQuestions: z.ZodDefault<z.ZodArray<z.ZodObject<{
+        question: z.ZodString;
+        answer: z.ZodString;
+    }, z.core.$strip>>>;
 }, z.core.$strip>;
 export type CaseHeaderInput = z.infer<typeof caseHeaderSchema>;
 export type VisitDetailsInput = z.infer<typeof visitDetailsSchema>;
@@ -370,5 +378,6 @@ export type FinancialsInput = z.infer<typeof financialsSchema>;
 export type ObligationsInput = z.infer<typeof obligationsSchema>;
 export type ReferenceCheckInput = z.infer<typeof referenceCheckSchema>;
 export type InterviewerCommentsInput = z.infer<typeof interviewerCommentsSchema>;
+export type CustomQuestionInput = z.infer<typeof customQuestionSchema>;
 export type CaseFormDataInput = z.infer<typeof caseFormDataSchema>;
 //# sourceMappingURL=form.schema.d.ts.map

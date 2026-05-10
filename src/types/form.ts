@@ -139,6 +139,12 @@ export interface InterviewerComments {
   commentsSummary: string | null; // FI only
 }
 
+// ── S10: Custom Q&A ──
+export interface CustomQuestion {
+  question: string;
+  answer: string;
+}
+
 // ── Complete Form Data ──
 export interface CaseFormData {
   visitDetails: VisitDetails;
@@ -149,4 +155,5 @@ export interface CaseFormData {
   obligations: Obligations | null; // PD only
   referenceCheck: ReferenceCheck;
   interviewerComments: InterviewerComments;
+  customQuestions: CustomQuestion[];
 }

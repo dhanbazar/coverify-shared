@@ -108,6 +108,10 @@ export interface InterviewerComments {
     recommendationText: string;
     commentsSummary: string | null;
 }
+export interface CustomQuestion {
+    question: string;
+    answer: string;
+}
 export interface CaseFormData {
     visitDetails: VisitDetails;
     personalDetails: PersonalDetails;
@@ -117,5 +121,6 @@ export interface CaseFormData {
     obligations: Obligations | null;
     referenceCheck: ReferenceCheck;
     interviewerComments: InterviewerComments;
+    customQuestions: CustomQuestion[];
 }
 //# sourceMappingURL=form.d.ts.map

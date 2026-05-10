@@ -195,6 +195,12 @@ export const interviewerCommentsSchema = z.object({
   commentsSummary: z.string().nullable().optional(),
 });
 
+// ── S10: Custom Q&A ──
+export const customQuestionSchema = z.object({
+  question: z.string().min(1),
+  answer: z.string().min(1),
+});
+
 // ── Complete Form ──
 export const caseFormDataSchema = z.object({
   visitDetails: visitDetailsSchema,
@@ -205,6 +211,7 @@ export const caseFormDataSchema = z.object({
   obligations: obligationsSchema.nullable().optional(),
   referenceCheck: referenceCheckSchema,
   interviewerComments: interviewerCommentsSchema,
+  customQuestions: z.array(customQuestionSchema).default([]),
 });
 
 // ── Inferred Types ──
@@ -217,4 +224,5 @@ export type FinancialsInput = z.infer<typeof financialsSchema>;
 export type ObligationsInput = z.infer<typeof obligationsSchema>;
 export type ReferenceCheckInput = z.infer<typeof referenceCheckSchema>;
 export type InterviewerCommentsInput = z.infer<typeof interviewerCommentsSchema>;
+export type CustomQuestionInput = z.infer<typeof customQuestionSchema>;
 export type CaseFormDataInput = z.infer<typeof caseFormDataSchema>;
